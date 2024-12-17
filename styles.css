@@ -1,0 +1,320 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, p {
+  color: #1a0330;
+  text-align: center;
+}
+
+/* Contenedor del título */
+.title-container {
+  background-color: #ffffff;
+  border: 1px solid #b8c7d4;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 20px auto; /* Espaciado superior/inferior */
+  padding: 20px;
+  text-align: center;
+}
+
+.title-container h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.title-container p {
+  font-size: 1rem;
+  color: #555; /* Gris oscuro */
+  margin-bottom: 20px;
+}
+
+/* Contenedor del menú centrado */
+.menu-container {
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  margin: 0; /* Elimina márgenes externos */
+  padding: 0;
+  background-color: #ffffff;
+  border: 1px solid #b8c7d4;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos del menú */
+.menu-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.menu-container ul li {
+  display: inline-block;
+  margin: 0 15px; /* Espaciado entre elementos */
+}
+
+.menu-container ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.menu-container ul li a:hover {
+  text-decoration: underline;
+}
+
+*,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background: #b8c7d4;
+}
+.container{
+    width: 40%;
+    top: 50%;
+    left: 50%;
+    background: white;
+    border-radius: 10px;
+    min-width: 450px;
+    position: absolute;
+    min-height: 100px;
+    transform: translate(-50%,-50%);
+}
+
+
+
+/*to do list*/
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #8aa6ba;
+  padding: 10px;
+}
+
+.todo-app {
+  width: 100%;
+  max-width: 540px; /* Corrección */
+  background: #b8c7d4;
+  margin: 100px auto 20px; /* Corrección */
+  padding: 40px 30px 70px; /* Corrección */
+  border-radius: 10px; /* Corrección */
+}
+
+.todo-app h2 {
+  color: #555;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  font: 24px;
+}
+
+.todo-app h2 img {
+  width: 3px;
+  max-width: 30%;
+  margin-left: 10px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #b8c7d4;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px; /* Corrección */
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 16px 50px; /* Corrección */
+  background: #8aa6ba;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px; /* Corrección */
+}
+
+/* Ajustes para la lista de tareas */
+ul {
+  margin-top: 20px;
+  padding: 0;
+  width: 100%;
+  max-width: 400px;
+}
+
+ul li {
+  list-style: none;
+  font-size: 17px;
+  padding: 10px;
+  background: #fff;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espacio entre checkbox y texto */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+ul li .task-checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+ul li span {
+  flex: 1; /* Asegura que el texto se adapte al ancho */
+  user-select: none; /* Evita seleccionar texto accidentalmente */
+}
+
+ul li.checked {
+  text-decoration: line-through;
+  color: #8aa6ba;
+}
+
+/* Animación para hover en tareas */
+ul li:hover {
+  background-color: #f9f9f9;
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+}
+
+
+
+
+
+
+/* Estilos para el formulario */
+form {
+  background-color: #ffffff;
+  border: 1px solid #b8c7d4; /* Borde sutil */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+  max-width: 400px; /* Ancho máximo */
+  margin: 20px auto; /* Centrar en la página */
+  padding: 20px; 
+}
+
+label {
+  display: block;
+  margin: 10px 0 5px; 
+  font-weight: bold;
+  text-align: left;
+}
+
+input {
+  width: 100%;
+  padding: 10px; 
+  margin-bottom: 15px;
+  border: 1px solid #b8c7d4;
+  border-radius: 4px;
+  font-size: 1rem; 
+  transition: border-color 0.3s ease; 
+}
+
+input:focus {
+  border-color: #1a0330; 
+  outline: none; 
+}
+
+button {
+  width: 50%; 
+  padding: 12px;
+  background-color: #477298;
+  color: #ebeae7;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem; 
+  font-family: 'Times New Roman', Times, serif;
+  transition: background-color 0.3s ease; 
+  display: block; /* Asegura que ocupe su espacio y respete text-align */
+  margin: 0 auto; /* Centra horizontalmente si es bloque */
+}
+
+form {
+  text-align: center; /* Centra todo el contenido dentro del formulario */
+}
+
+
+button:hover {
+  background-color: #ebeae7;
+}
+
+/* Estilos para las tablas */
+table {
+  width: 70%; 
+  margin: 30px auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #3d1c00bb;
+}
+
+th {
+  background-color: #8aa6ba;
+  color: rgb(65, 31, 59);
+  font-size: 1.1rem; 
+}
+
+tr:hover {
+  background-color: #b8c7d4; 
+}
+
+/* Botones primarios */
+.btn-primary {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #b8c7d4;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #8aa6ba;
+
+}
+
+
+
+

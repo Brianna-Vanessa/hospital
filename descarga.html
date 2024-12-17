@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Descarga de Dispositivos</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h2>Descargar Dispositivos en Excel</h2>
+  
+  <!-- Botón para descargar dispositivos en formato Excel -->
+  <a href="/download" class="btn btn-primary" id="download-excel">Descargar Dispositivos</a>
+
+  <h2>Descargar Dispositivos en PDF</h2>
+  
+  <!-- Botón para descargar dispositivos en formato PDF -->
+  <a href="/download-pdf" class="btn btn-primary" id="download-pdf">Descargar Dispositivos</a>
+
+  <script>
+    // Mensaje de alerta para la descarga de Excel
+    document.querySelector('#download-excel').addEventListener('click', function() {
+      alert('El archivo de Excel está siendo generado. Por favor, espere...');
+    });
+
+    // Mensaje de alerta para la descarga de PDF
+    document.querySelector('#download-pdf').addEventListener('click', function() {
+      alert('El archivo PDF está siendo generado. Por favor, espere...');
+    });
+  </script>
+</body>
+</html>

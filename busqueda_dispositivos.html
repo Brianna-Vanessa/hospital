@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda en Tiempo Real</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Búsqueda en Tiempo Real</h1>
+  
+  <!-- Campo de búsqueda -->
+  <input type="text" id="search" placeholder="Buscar dispositivo..." />
+  
+  <!-- Resultados de la búsqueda -->
+  <ul id="results"></ul>
+
+  <script>
+    // Obtener el campo de búsqueda
+    document.getElementById('search').addEventListener('keyup', function () {
+      const query = this.value.trim(); // Obtener el texto del campo de búsqueda
+
+      // Si no hay texto, limpiar los resultados
+      if (!query) {
+        document.getElementById('results').innerHTML = '';
+        return;
+      }
+
+      // Hacer la solicitud al servidor para buscar en la base de datos
+      fetch(`/buscar?query=${encodeURIComponent(query)}`)
+        .then(res => {
+          if (!res.ok) throw new Error('Error al hacer la búsqueda');
+          return res.json(); // Parsear los resultados JSON
+        })
+        .then(data => {
+          const results = document.getElementById('results');
+          results.innerHTML = ''; // Limpiar resultados previos
+
+          // Si no hay resultados, mostrar un mensaje
+          if (data.length === 0) {
+            results.innerHTML = '<li>No se encontraron dispositivos.</li>';
+            return;
+          }
+
+          // Mostrar los resultados de la búsqueda
+          data.forEach(row => {
+            const li = document.createElement('li');
+            li.textContent = row.nombre_disp; // Mostrar el nombre del dispositivo
+            results.appendChild(li);
+          });
+        })
+        .catch(err => {
+          console.error('Error al realizar la búsqueda:', err);
+          document.getElementById('results').innerHTML = '<li>Error al realizar la búsqueda.</li>';
+        });
+    });
+  </script>
+</body>
+</html>

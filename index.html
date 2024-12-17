@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Dispositivos del Hospital</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="title-container">
+    <h1>Bienvenido a la Gestión de Dispositivos del Hospital General</h1>
+    <p>Administre los dispositivos y su información de manera eficiente.</p>
+  </div>
+  <!-- Contenedor del menú dinámico -->
+  <div id="navbar">Cargando menú...
+  </div>
+
+  <script>
+    // Cargar el menú dinámicamente
+    fetch('/menu')
+      .then(res => res.json())
+      .then(data => {
+        const navbar = document.getElementById('navbar');
+        let menuHTML = '<ul>';
+        data.forEach(item => {
+          menuHTML += `<li><a href="${item.url}">${item.nombre}</a></li>`;
+        });
+        menuHTML += '</ul>';
+        navbar.innerHTML = menuHTML;
+      })
+      .catch(error => console.error('Error cargando el navbar:', error));
+  </script>
+  <script src="script.js"></script>
+
+
+
+<h2>Registrar Biomédico</h2>
+<form action="/submit-data" method="POST">
+  <label for="nombre_biomed">Nombre del ingeniero:</label>
+  <input type="text" id="nombre_biomed" name="nombre_biomed" required><br/>
+
+  <label for="correo">Correo:</label>
+  <input type="email" id="correo" name="correo" required><br/>
+
+  <label for="telefono">Teléfono:</label>
+  <input type="number" id="telefono" name="telefono" required><br/>
+
+  <button type="submit">Guardar</button>
+</form>
+
+<h2>Buscar Biomédicos</h2>
+<form action="/buscar-biomedicos" method="GET">
+  <label for="nombre_biomed-search">Nombre del ingeniero:</label>
+  <input type="text" id="nombre_biomed-search" name="nombre_biomed_search"><br/>
+
+  <label for="correo-search">Correo:</label>
+  <input type="email" id="correo-search" name="correo_search"><br/>
+
+  <button type="submit">Buscar</button>
+</form>
+
+<h2>Registrar Dispositivo</h2>
+<form action="/insertar-dispositivo" method="POST">
+  <label for="nombre_disp">Nombre del dispositivo:</label>
+  <input type="text" id="nombre_disp" name="nombre_disp" required><br/>
+
+  <label for="nombre_biomed">Ing. Biomedico:</label>
+  <input type="text" id="nombre_biomed" name="nombre_biomed" required><br/>
+
+  <label for="area">Área:</label>
+  <input type="text" id="area" name="area" required><br/>
+
+  <label for="estudio">Estudio:</label>
+  <input type="text" id="estudio" name="estudio" required><br/>
+
+  <label for="costo">Costo:</label>
+  <input type="number" id="costo" name="costo" required><br/>
+
+  <label for="marca">Marca:</label>
+  <input type="text" id="marca" name="marca" required><br/>
+  
+  <label for="version">Version:</label>
+  <input type="number" id="version" name="version" required><br/>
+  
+  <button type="submit">Guardar Dispositivo</button>
+</form>
+
+
+<h2>Buscar Dispositivo</h2>
+<form action="/buscar-dispositivos" method="GET">  <!-- Cambié la ruta aquí -->
+  <label for="nombre_disp-search">Nombre del dispositivo:</label>
+  <input type="text" id="nombre_disp-search" name="nombre_disp-search"><br/>
+
+  <label for="area-search">Área:</label>
+  <input type="text" id="area-search" name="area_search"><br/>
+
+  <label for="mantenimiento-search">Fecha de mantenimineto:</label>
+  <input type="date" id="mantenimiento-search" name="mantenimiento-search"><br/>
+
+  <label for="costo-search">Área:</label>
+  <input type="number" id="costo-search" name="costo_search"><br/>
+
+  <label for="marca-search">Área:</label>
+  <input type="text" id="marca-search" name="marca_search"><br/>
+
+  <button type="submit">Buscar</button>
+</form>
+
+</body>
+</html> 
